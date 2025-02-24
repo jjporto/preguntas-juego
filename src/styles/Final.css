@@ -1,0 +1,102 @@
+.final-container {
+  position: relative; /* Asegura que los elementos absolutos se posicionen respecto a este contenedor */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* Opcional: si deseas mantener el fondo degradado, pero ten en cuenta que puede superponerse a la imagen de fondo */
+  /* background: linear-gradient(to bottom, #a8e063, #56ab2f); */
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.final-background {
+  position: fixed; /* Fija la imagen en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1; /* Se coloca detrás de los demás elementos */
+  
+}
+
+.final-message {
+  text-align: center;
+  z-index: 1; /* Asegura que el mensaje esté por encima del fondo */
+  margin-bottom: 20px;
+}
+
+.final-title {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #dbfd1c;
+  animation: bounce 2s infinite; /* Animación de rebote */
+}
+
+.final-subtitle {
+  font-size: 1.2rem;
+  margin-top: 20px;
+  color: #ffffff;
+  opacity: 0.8;
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+.final-image {
+  width: 200px;
+  z-index: 1;
+  margin-top: 20px;
+}
+
+/* Cuadros de los creadores en la esquina inferior */
+.final-creators {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none; /* Opcional: evita que interfiera con otros elementos */
+  color: #ffffff;
+  
+}
+
+.creator-box {
+  background-color: rgba(255, 255, 255, 0.918); /* Fondo semi-transparente */
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 1rem;
+  pointer-events: auto; /* Permite la interacción si es necesario */
+}
+
+/* Opcional: ajustes responsivos para los cuadros de los creadores */
+@media (max-width: 480px) {
+  .creator-box {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
+
+
+/* Animaciones */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

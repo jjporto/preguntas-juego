@@ -1,0 +1,160 @@
+/* Asegurar que el contenedor ocupe toda la pantalla */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  box-sizing: border-box;
+}
+
+/* Contenedor principal para la página de niveles */
+.levels-pages {
+  background: url('https://res.cloudinary.com/dwg4kerpk/image/upload/v1740420926/fondo_niveles_j3ggh1.jpg'); /* Reemplaza con la ruta correcta de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+}
+
+/* Estilo del título */
+.levels-pages h2 {
+  font-size: 2.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin-bottom: 50px;
+}
+
+/* Contenedor de las tarjetas */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Courier New', Courier, monospace;
+  justify-content: center;
+  gap: 50px; /* Ajustado el espacio entre las tarjetas para pantallas pequeñas */
+}
+
+/* Estilo de las tarjetas */
+.card1 {
+  width: 250px;
+  height: 300px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 2px 2px 19px rgba(0, 0, 0, 0.3); /* Sombra */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Mejor visibilidad */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Asignar imágenes a cada tarjeta */
+.card1:nth-child(1) {
+  background-image: url('https://res.cloudinary.com/dwg4kerpk/image/upload/v1740420935/hojas_z2zwjs.jpg'); 
+}
+
+.card1:nth-child(2) {
+  background-image: url('https://res.cloudinary.com/dwg4kerpk/image/upload/v1740420938/hojasgrandes_hla1tw.jpg'); 
+}
+
+.card1:nth-child(3) {
+  background-image: url('https://res.cloudinary.com/dwg4kerpk/image/upload/v1740420941/arbolito_eywzjs.jpg'); 
+}
+
+.card1:nth-child(4) {
+  background-image: url('https://res.cloudinary.com/dwg4kerpk/image/upload/v1740420944/4_e6gbkt.jpg'); 
+}
+
+.card1:nth-child(5) {
+  background-image: url('https://res.cloudinary.com/dwg4kerpk/image/upload/v1740420943/5_ixjswb.jpg'); 
+}
+
+/* Oscurecer el fondo de las tarjetas */
+.card1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* Oscurecer un poco el fondo */
+  border-radius: 6px;
+  z-index: 0;
+}
+
+/* Efecto hover en las tarjetas desbloqueadas */
+.card1:hover {
+  transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
+  filter: brightness(1.2); /* Ilumina un poco la imagen */
+}
+
+/* Estilo del texto dentro de las tarjetas */
+.card1 span {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+/* Tarjetas bloqueadas: aplicar escala de grises */
+.card1.locked {
+  cursor: not-allowed;
+  filter: grayscale(100%) brightness(0.7); /* Escala de grises y oscurecimiento */
+}
+
+.card1.locked::before {
+  background: rgba(0, 0, 0, 0.6); /* Fondo más oscuro para reforzar el efecto */
+}
+
+/* Animación sutil en la carga */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsividad para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .levels-pages h2 {
+    font-size: 2rem;
+  }
+
+  .cards-container {
+    gap: 20px; /* Reducir el espacio entre las tarjetas en pantallas pequeñas */
+  }
+
+  .card1 {
+    width: 200px;
+    height: 250px;
+  }
+
+  .card1 span {
+    font-size: 1.5rem;
+  }
+}
+
+/* Ajuste para pantallas más pequeñas, como teléfonos muy pequeños */
+@media (max-width: 480px) {
+  .cards-container {
+    gap: 15px; /* Espacio aún más pequeño entre tarjetas */
+  }
+
+  .card1 {
+    width: 170px; /* Reducción del tamaño de las tarjetas en pantallas pequeñas */
+    height: 220px;
+  }
+
+  .card1 span {
+    font-size: 1.2rem; /* Reducir el tamaño de la fuente */
+  }
+}

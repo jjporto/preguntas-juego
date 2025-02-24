@@ -1,0 +1,88 @@
+/* Contenedor principal */
+.home-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* Video de fondo */
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2; /* Coloca el video al fondo */
+}
+
+/* Capa de efecto sobre el video */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); 
+  z-index: -1; 
+  pointer-events: none; 
+}
+
+/* Contenedor del contenido */
+.content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Estilo del título */
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  font-family: 'Courier New', Courier, monospace; /* Estilo de máquina de escribir */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  overflow: hidden; /* Oculta cualquier texto que se desborde */
+ 
+}
+
+
+
+/* Estilo de los botones */
+button {
+  margin: 10px;
+  padding: 15px 30px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 80%;
+  max-width: 300px;
+}
+
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+  .content h1 {
+      font-size: 2.5rem;
+  }
+
+  button {
+      font-size: 16px;
+      padding: 12px 25px;
+  }
+}

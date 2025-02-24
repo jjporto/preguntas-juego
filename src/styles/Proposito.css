@@ -1,0 +1,92 @@
+/* Contenedor padre que ubica la card y la imagen lado a lado */
+.proposito-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+  min-height: 100vh; /* Asegura que el contenedor ocupe al menos la altura completa de la ventana */
+}
+
+/* Estilos de la card */
+.card-proposito {
+  background-color: #eeecec9f;
+  padding: 20px;
+  border-radius: 60px;
+  box-shadow: 0 4px 12px #0000001a;
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  height: auto; /* Se ajusta según el contenido */
+}
+
+/* Estilo del título */
+.card-title {
+  color: #333;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+
+}
+
+/* Estilo del texto */
+.card-text {
+  font-size: 25px;
+  color: #555555;
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 1em;
+  font: 150% sans-serif;
+}
+
+/* Estilos para la imagen */
+.proposito-image {
+  width: clamp(50px, 20vw, 200px); /* Mínimo 100px, ideal 20% del viewport, máximo 200px */
+  height: auto;
+  border-radius: 20px;
+}
+
+
+
+/* Responsive: en pantallas menores a 768px, se apilan verticalmente y se ajusta el tamaño */
+@media (max-width: 768px) {
+  .proposito-wrapper {
+    flex-direction: column;
+  }
+  
+  .card-proposito {
+    max-width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+  }
+  
+  .card-text {
+    font-size: 18px;
+  }
+  
+  .proposito-image {
+    max-width: 80%;
+    margin-top: 20px;
+  }
+}
+
+/* Responsive extra: en pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .card-title {
+    font-size: 1.8rem;
+  }
+  
+  .card-text {
+    font-size: 16px;
+  }
+  
+  .proposito-image {
+    max-width: 90%;
+  }
+}
