@@ -131,7 +131,7 @@ import { useState, useEffect } from "react";
 import { useGameContext } from "../context/GameContext";
 import { questions } from "../data/questions";
 import Question from "../components/Question";
-import ScoreSummary from "../components/ScoreSummary";
+import ScoreSummary from "../components/Scoresummary.jsx";
 import "../styles/level.css";
 
 // Función para mezclar y seleccionar preguntas al azar
