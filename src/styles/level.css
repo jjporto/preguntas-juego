@@ -17,10 +17,10 @@ body {
 .level-container {
   text-align: center;
   padding: 40px;
-  margin: 20px;
+  margin: 20px auto; /* Centrar horizontalmente */
   border-radius: 15px;
   max-width: 800px;
-  width: 100%; /* Asegurar que ocupe todo el ancho disponible */
+  width: 90%; /* Más flexible en diferentes tamaños */
   color: rgb(0, 0, 0);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -31,7 +31,7 @@ body {
   background-size: cover;
   background-position: center;
   font-size: 19px;
-  margin-top: -47%;
+  margin-top: -30vh; /* Usa vh para adaptarlo a la pantalla */
 }
 
 /* Estilo para las preguntas */
@@ -116,6 +116,7 @@ body {
   .level-container {
     padding: 20px;
     margin: 10px;
+    margin-top: -15vh; /* Ajustar el margen superior */
   }
   
   .level-question {
@@ -143,6 +144,10 @@ body {
 
 /* Media Queries para dispositivos muy pequeños */
 @media (max-width: 480px) {
+  .level-container {
+    margin-top: -10vh; /* Ajustar el margen superior */
+  }
+
   .level-question {
     font-size: 1.8rem;
   }
